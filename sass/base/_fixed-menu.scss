@@ -1,0 +1,39 @@
+.fixed-menu {
+  position: fixed;
+  top: 231px;
+  right: 11%;
+}
+
+.fixed__item {
+  margin-bottom: 5px;
+
+  &--active {
+    
+    .fixed__link {
+      border-color: #fff;
+    }
+  }
+}
+
+.fixed__link {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: block;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+

@@ -1,0 +1,14 @@
+.button {
+  background: rgba(254, 219, 63, 1);
+  padding: 20px 43px;
+  border-radius: 29px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 800;
+  border: none;
+
+  &--transparent {
+    background: transparent;
+  }
+}
+

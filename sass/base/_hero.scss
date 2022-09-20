@@ -1,0 +1,23 @@
+.hero{
+  background: url("../../img/header_fon.png") center top 16px no-repeat;
+  height: 100vh;
+  min-height: 650px;
+  color: #fff;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 45px 0 84px;
+}
+
+.hero__title-section {
+  width: 46%;
+}
+
+.hero__icon-section {
+  margin-top: 84px;
+}
+

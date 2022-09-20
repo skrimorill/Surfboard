@@ -1,0 +1,41 @@
+.benefits {
+  display: flex;
+}
+
+.benefits__item {
+  flex: 1;
+  padding: 0 3%;
+  position: relative;
+
+  &:before {
+    content: url(./img/circles.png);
+    position: absolute;
+    top: 54px;
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+    
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.benefit__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #292929;
+  
+}
+
+.benefit__desc {
+  font-size: 18px;
+  line-height: 22px;
+}
