@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700&display=swap");
 .hero {
-  background: url("./img/header_fon.png") center top 16px no-repeat;
+  background: url("../../img/header_fon.png") center top 16px no-repeat;
   height: 100vh;
   min-height: 650px;
   color: #fff; }
@@ -438,7 +438,8 @@ template {
   font-weight: 800;
   border: none; }
   .button--transparent {
-    background: transparent; }
+    background: transparent;
+    color: #fff; }
 
 .features {
   display: flex; }
@@ -463,7 +464,7 @@ template {
 .fixed-menu {
   position: fixed;
   top: 231px;
-  right: 3%; }
+  right: 11%; }
 
 .fixed__item {
   margin-bottom: 5px; }
@@ -664,7 +665,9 @@ template {
 
 .form__controls {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 1rem; }
 
 .radio {
   display: flex;
@@ -698,7 +701,13 @@ template {
     left: 50%;
     transform: translate(-50%, -50%); }
 
+.radio__title {
+  margin-left: 0.5rem; }
+
+.form__buttons {
+  margin-top: 3rem; }
+
 .section__map {
-  background: url("./img/map.png") center no-repeat; }
+  background: url("../../img/map.png") center no-repeat; }
 
 /*# sourceMappingURL=index.css.map */

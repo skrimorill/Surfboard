@@ -49,6 +49,8 @@
 .form__controls {
   display: flex;
   flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 1rem;
 }
 
 .radio {
@@ -97,4 +99,12 @@
     transform: translate(-50%, -50%);
 
   }
+}
+
+.radio__title {
+  margin-left: 0.5rem;
+}
+
+.form__buttons {
+  margin-top: 3rem;
 }
