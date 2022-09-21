@@ -6,10 +6,24 @@
   color: rgba(0, 0, 0, 1);
   font-weight: 800;
   border: none;
+  outline: none;
+
+  &:focus { 
+    background-color: #ffd517;
+  }
+
+  &:hover {
+    background-color: #ffd517;
+  }
 
   &--transparent {
-    background: transparent;
+    background-color: transparent;
     color: #fff;
+  }
+
+  &--transparent:hover {
+    background-color: transparent;
+    color: #ffd517;
   }
 }
 

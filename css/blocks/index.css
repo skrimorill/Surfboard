@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700&display=swap");
 .hero {
-  background: url("../../img/header_fon.png") center top 16px no-repeat;
+  background: url("../../img/header-fon.jpg") center no-repeat;
+  background-size: cover;
   height: 100vh;
   min-height: 650px;
   color: #fff; }
@@ -13,10 +14,14 @@
   padding: 45px 0 84px; }
 
 .hero__title-section {
-  width: 46%; }
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: start; }
 
 .hero__icon-section {
-  margin-top: 84px; }
+  margin-top: auto; }
 
 * {
   box-sizing: border-box; }
@@ -387,7 +392,7 @@ template {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 66px; }
+  margin-bottom: 103px; }
 
 .header__col {
   display: flex;
@@ -421,7 +426,8 @@ template {
   font-weight: 700;
   line-height: 58px;
   text-transform: uppercase;
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+  margin-top: auto; }
 
 .hello__text {
   font-size: 21px;
@@ -436,10 +442,18 @@ template {
   text-transform: uppercase;
   color: black;
   font-weight: 800;
-  border: none; }
+  border: none;
+  outline: none; }
+  .button:focus {
+    background-color: #ffd517; }
+  .button:hover {
+    background-color: #ffd517; }
   .button--transparent {
-    background: transparent;
+    background-color: transparent;
     color: #fff; }
+  .button--transparent:hover {
+    background-color: transparent;
+    color: #ffd517; }
 
 .features {
   display: flex; }
@@ -630,7 +644,8 @@ template {
   align-items: center; }
 
 .order-section {
-  background: rgba(24, 21, 21, 0.356); }
+  background: url("../../img/form-fon.jpg") center center no-repeat;
+  background-size: contain; }
 
 .form {
   display: flex; }
@@ -655,9 +670,10 @@ template {
   width: 100%;
   border: none;
   padding: 13px 11px;
-  border: 3px solid transparent; }
+  border: 3px solid transparent;
+  border-radius: 4px; }
   .form__input:focus {
-    border-color: #dee2bd;
+    border-color: #FEDB3F;
     outline: none; }
   .form__input--textarea {
     height: 152px;
@@ -672,14 +688,16 @@ template {
 .radio {
   display: flex;
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  position: relative; }
   .radio__checkbox .radio__visible {
     border-radius: 0; }
     .radio__checkbox .radio__visible:before {
-      background: url("./img/vic.png") center no-repeat; }
+      background: url("../../img/vic.png") center no-repeat; }
 
 .radio__elem {
-  display: none; }
+  appearance: none;
+  position: absolute; }
   .radio__elem:checked ~ .radio__visible:before {
     display: block; }
 
@@ -689,6 +707,8 @@ template {
   position: relative;
   border-radius: 50%;
   background: #fff; }
+  .radio__visible:focus {
+    outline: #FEDB3F; }
   .radio__visible:before {
     content: "";
     background: #FEDB3F;

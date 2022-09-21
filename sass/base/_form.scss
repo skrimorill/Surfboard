@@ -1,5 +1,6 @@
 .order-section {
-  background: rgba(24, 21, 21, 0.356);
+  background: url("../../img/form-fon.jpg") center center no-repeat;
+  background-size: contain;
 }
 
 .form {
@@ -34,9 +35,10 @@
   border: none;
   padding: 13px 11px;
   border: 3px solid transparent;
+  border-radius: 4px;
 
   &:focus {
-    border-color: #dee2bd;
+    border-color: #FEDB3F;
     outline: none;
   }
 
@@ -57,20 +59,22 @@
   display: flex;
   cursor: pointer;
   user-select: none;
+  position: relative;
 
   &__checkbox {
     .radio__visible {
       border-radius: 0;
       &:before {
-        background: url("./img/vic.png") center no-repeat;
+        background: url("../../img/vic.png") center no-repeat;
       }
     }
   }
 }
 
 .radio__elem {
-  display: none;
-  
+  appearance: none;
+  position: absolute;
+
   &:checked ~ .radio__visible {
     &:before {
       display: block;
@@ -85,6 +89,10 @@
   position: relative;
   border-radius: 50%;
   background: #fff;
+
+  &:focus {
+    outline: #FEDB3F;
+  }
 
   &:before {
     content: "";
