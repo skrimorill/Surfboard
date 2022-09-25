@@ -10,7 +10,7 @@
   &:before {
     content: url(./img/circles.png);
     position: absolute;
-    top: 54px;
+    top: 4rem;
     right: 0;
     transform: translateX(50%);
   }
@@ -29,13 +29,13 @@
 }
 
 .benefit__title {
-  font-size: 24px;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #292929;
   
 }
 
 .benefit__desc {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.6rem;
 }

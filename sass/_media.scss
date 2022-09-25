@@ -1,0 +1,17 @@
+$baseFontSize: 15px;
+$tablets: 768px;
+$phones: 480px;
+
+
+@mixin tablets {
+  @media (max-width: $tablets) {
+    @content;
+  }
+}
+
+
+@mixin phones {
+  @media (max-width: $phones) {
+    @content;
+  }
+}

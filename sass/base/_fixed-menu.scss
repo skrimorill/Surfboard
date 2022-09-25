@@ -1,11 +1,11 @@
 .fixed-menu {
   position: fixed;
-  top: 231px;
+  top: 14.6rem;
   right: 11%;
 }
 
 .fixed__item {
-  margin-bottom: 5px;
+  margin-bottom: 0.3rem;
 
   &--active {
     
@@ -16,18 +16,18 @@
 }
 
 .fixed__link {
-  width: 16px;
-  height: 16px;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: 0.1rem solid transparent;
   display: block;
   position: relative;
 
   &:before {
     content: "";
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 0.3rem;
+    height: 0.3rem;
     background: #fff;
     border-radius: 50%;
     position: absolute;

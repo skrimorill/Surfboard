@@ -1,8 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 103px;
+  align-items: flex-start;
+  margin-bottom: 7rem;
 }
 
 .header__col {
@@ -11,34 +11,35 @@
 }
 
 .logo__header {
-  margin-right: 23px;
-}
-
-.menu__list {
-  display: flex;
-}
-
-.menu__item {
-  margin-left: 22px;
-  font-weight: 700;
-  font-size: 18px;
+  margin-right: 1.6rem;
+  
 }
 
 .phone-number {
   display: flex;
 
-  .phone-number__icon {
-    Width: 12.83px;
-    Height: 13.78px;
+  &__icon {
+    Width: 1rem;
+    Height: 1rem;
     align-self: center;
-    margin-right: 6px;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
   }
-  .phone-number__text {
+  
+  &__text {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 1.5rem;
     font-style: normal;
+    white-space: nowrap;
   }
 }
 
+.header__phone-number {
+  @include tablets {
+    display: none;
+  }
 
-
+  @include phones {
+    display: none;
+  }
+}
