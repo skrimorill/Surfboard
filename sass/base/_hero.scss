@@ -2,7 +2,7 @@
   background: url("../../img/header-fon.jpg") center no-repeat;
   background-size: cover;
   height: 100vh;
-  min-height: 59rem;
+  min-height: 650px;
   color: #fff;
 }
 
@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 3rem 0 5.5rem;
+  padding: 45px 0 84px;
 }
 
 .hero__title-section {
@@ -20,24 +20,10 @@
   flex-direction: column;
   flex: 1;
   align-items: start;
-  margin-bottom: 4.6rem;
-}
-
-.hero__title-section {
-   @include tablets {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-   }
+  margin-bottom: 5rem;
 }
 
 .hero__icon-section {
   margin-top: auto;
 }
 
-.hero__icon-section {
-
-  @include tablets {
-    display: none;
-  }
-}
