@@ -1,29 +1,46 @@
-.hero{
-  background: url("../../img/header-fon.jpg") center no-repeat;
+.hero {
+  background: url("../../img/header-fon.jpg") center center no-repeat;
   background-size: cover;
   height: 100vh;
   min-height: 650px;
   color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 45px 0 84px;
+  }
+
+  &__title-section {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+
+  &__icon-section {
+    margin-top: auto;
+  }
 }
 
-.hero__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 45px 0 84px;
+.hello__title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  text-transform: uppercase;
+  margin-bottom: -3rem;
 }
 
-.hero__title-section {
-  width: 46%;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: start;
-  margin-bottom: 5rem;
+.hello__text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
-.hero__icon-section {
-  margin-top: auto;
-}
+
 
