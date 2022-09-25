@@ -1,5 +1,9 @@
 .benefits {
   display: flex;
+  @include phones {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .benefits__item {

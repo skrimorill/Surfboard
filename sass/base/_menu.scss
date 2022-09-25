@@ -16,10 +16,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    column-gap: 1.4rem;
   }
 
   &__item {
-    margin-left: 1.4rem;
     font-weight: 700;
     font-size: 1.1rem;
   }

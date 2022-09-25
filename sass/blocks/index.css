@@ -606,6 +606,12 @@ template {
 .benefits {
   display: flex;
 }
+@media (max-width: 480px) {
+  .benefits {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .benefits__item {
   flex: 1;
@@ -926,9 +932,10 @@ template {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  -moz-column-gap: 1.4rem;
+       column-gap: 1.4rem;
 }
 .menu__item {
-  margin-left: 1.4rem;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -971,9 +978,17 @@ template {
 
 .social {
   display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 0.93rem;
+       column-gap: 0.93rem;
 }
-.social__item {
+
+.svg-icon {
+  display: flex;
   height: 1.33rem;
   width: 1.33rem;
-  margin-right: 0.93rem;
+  fill: #B3B3B3;
+}
+.svg-icon:hover {
+  fill: #292929;
 }/*# sourceMappingURL=index.css.map */

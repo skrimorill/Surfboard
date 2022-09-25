@@ -1,9 +1,16 @@
 .social {
   display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.93rem;
 
-  &__item {
-    height: 1.33rem;
-    width: 1.33rem;
-    margin-right: 0.93rem;
-  }
 } 
+.svg-icon {
+  display: flex;
+  height: 1.33rem;
+  width: 1.33rem;
+  fill: #B3B3B3;
+
+  &:hover {
+    fill: #292929;
+  }
+}
