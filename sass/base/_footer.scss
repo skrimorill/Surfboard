@@ -7,10 +7,13 @@
   width: 95%;
   max-width: 950px;
 
+  @include phones {
+    flex-direction: column;
+  }  
 
-&__phone-number-text {
+  &__phone-number-text {
   font-weight: 400;
-}
+  }
 }
 
 

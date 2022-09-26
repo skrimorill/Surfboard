@@ -5,6 +5,10 @@
 
 .order__title {
   color: #fff;
+
+  @include tablets {
+  margin-bottom: 0.2rem;
+  }
 }
 
 .form {
@@ -13,12 +17,11 @@
   @include tablets {
     flex-direction: column;
     padding: 0 19%;
-  
   }
 
   @include phones {
-    flex-direction: column;
-    padding: 0 10%;
+    // flex-direction: column;
+    padding: 0;
   }
 }
 
@@ -76,6 +79,10 @@
   flex-wrap: wrap;
   gap: 3rem;
   margin-bottom: 1rem;
+
+  @include phones {
+    justify-content: center;
+  }
 }
 
 .radio {
@@ -83,6 +90,10 @@
   cursor: pointer;
   user-select: none;
   position: relative;
+
+  @include phones {
+    margin-bottom: 0.7rem;
+  }
 
   &__checkbox {
     .radio__visible {

@@ -40,6 +40,16 @@
   font-weight: 400;
   line-height: 1.5rem;
 }
+@media (max-width: 768px) {
+  .hello__text {
+    padding: 0 25%;
+  }
+}
+@media (max-width: 480px) {
+  .hello__text {
+    padding: 0 15%;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -602,6 +612,11 @@ template {
 .headline__subtitle {
   padding: 0 26%;
 }
+@media (max-width: 480px) {
+  .headline__subtitle {
+    padding: 0 5%;
+  }
+}
 
 .benefits {
   display: flex;
@@ -617,6 +632,12 @@ template {
   flex: 1;
   padding: 0 3%;
   position: relative;
+}
+@media (max-width: 480px) {
+  .benefits__item {
+    padding: 0;
+    margin-bottom: 1.26rem;
+  }
 }
 .benefits__item:before {
   content: url(./img/circles.png);
@@ -649,15 +670,27 @@ template {
 .benefit {
   text-align: center;
 }
+@media (max-width: 480px) {
+  .benefit {
+    display: flex;
+    text-align: left;
+  }
+}
 
 .benefits__img {
   display: inline-flex;
   width: 9rem;
   height: 9rem;
   position: relative;
-  background: #F2F5F4;
+  background: rgba(75, 75, 78, 0.3137254902);
   border-radius: 50%;
   overflow: hidden;
+}
+@media (max-width: 480px) {
+  .benefits__img {
+    margin-bottom: 0;
+    margin-right: 1.33rem;
+  }
 }
 
 .benefit__icon {
@@ -783,6 +816,11 @@ template {
 .order__title {
   color: #fff;
 }
+@media (max-width: 768px) {
+  .order__title {
+    margin-bottom: 0.2rem;
+  }
+}
 
 .form {
   display: flex;
@@ -795,8 +833,7 @@ template {
 }
 @media (max-width: 480px) {
   .form {
-    flex-direction: column;
-    padding: 0 10%;
+    padding: 0;
   }
 }
 
@@ -853,6 +890,11 @@ template {
   gap: 3rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 480px) {
+  .form__controls {
+    justify-content: center;
+  }
+}
 
 .radio {
   display: flex;
@@ -862,6 +904,11 @@ template {
       -ms-user-select: none;
           user-select: none;
   position: relative;
+}
+@media (max-width: 480px) {
+  .radio {
+    margin-bottom: 0.7rem;
+  }
 }
 .radio__checkbox .radio__visible {
   border-radius: 0;
@@ -971,6 +1018,11 @@ template {
   margin: 0 auto;
   width: 95%;
   max-width: 950px;
+}
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+  }
 }
 .footer__phone-number-text {
   font-weight: 400;

@@ -11,6 +11,11 @@
   padding: 0 3%;
   position: relative;
 
+  @include phones {
+    padding: 0;
+    margin-bottom: 1.26rem;
+  }
+
   &:before {
     content: url(./img/circles.png);
     position: absolute;
