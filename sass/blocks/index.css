@@ -6,6 +6,11 @@
   min-height: 650px;
   color: #fff;
 }
+@media (max-width: 768px) {
+  .hero {
+    background: url("../../img/header-fon800.jpg") center center no-repeat;
+  }
+}
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -923,6 +928,10 @@ template {
           appearance: none;
   position: absolute;
 }
+.radio__elem:focus {
+  outline: #FEDB3F;
+  border: 4px solid #FEDB3F;
+}
 .radio__elem:checked ~ .radio__visible:before {
   display: block;
 }
@@ -933,9 +942,6 @@ template {
   position: relative;
   border-radius: 50%;
   background: #fff;
-}
-.radio__visible:focus {
-  outline: #FEDB3F;
 }
 .radio__visible:before {
   content: "";

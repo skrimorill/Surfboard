@@ -5,6 +5,10 @@
   min-height: 650px;
   color: #fff;
 
+  @include tablets {
+    background: url("../../img/header-fon800.jpg") center center no-repeat;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;

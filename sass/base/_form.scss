@@ -95,6 +95,7 @@
     margin-bottom: 0.7rem;
   }
 
+
   &__checkbox {
     .radio__visible {
       border-radius: 0;
@@ -108,6 +109,11 @@
 .radio__elem {
   appearance: none;
   position: absolute;
+
+  &:focus {
+    outline: #FEDB3F;
+    border: 4px solid #FEDB3F;
+  }
 
   &:checked ~ .radio__visible {
     &:before {
@@ -124,9 +130,10 @@
   border-radius: 50%;
   background: #fff;
 
-  &:focus {
-    outline: #FEDB3F;
-  }
+  // &:focus {
+  //   outline: #FEDB3F;
+  //   // border: 4px solid #FEDB3F;
+  // }
 
   &:before {
     content: "";
