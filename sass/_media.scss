@@ -1,6 +1,7 @@
 $baseFontSize: 15px;
 $tablets: 768px;
 $phones: 480px;
+$phones-small: 320px;
 
 
 @mixin tablets {
@@ -12,6 +13,12 @@ $phones: 480px;
 
 @mixin phones {
   @media (max-width: $phones) {
+    @content;
+  }
+}
+
+@mixin phones-small {
+  @media (max-width: $phones-small) {
     @content;
   }
 }

@@ -1,22 +1,21 @@
 .features {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2.7rem;
+
+  @include tablets {
+    justify-content: center;
+  }
 }
 
 .feature {
   display: flex;
 }
 
-.features__item {
-  margin-right: 2.7rem;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
 
 .feature__icon {
   width: 3.2rem;
-  margin-right: 0.4rem;
+  margin-right: 6px;
 }
 
 .features__text {

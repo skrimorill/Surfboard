@@ -1,0 +1,136 @@
+.products {
+
+  &__list-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 80px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &__preview {
+    width: 100%;
+    max-width: 397px;
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+    padding-bottom: 85px;
+ }
+
+ &__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.86rem;
+  color: #292929;
+  text-transform: uppercase;
+ }
+
+ &__desk {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.46rem;
+ }
+
+ &__weight {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.46rem;
+  display: flex;
+  align-items: center;
+  column-gap: 52px;
+
+  &-item {
+  display: flex;
+  flex-direction: column;
+  }
+
+  &-count {
+    font-weight: 700;  
+    color: #292929;
+  }
+}
+
+  &__price {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 4rem;
+    color: #292929;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    column-gap: 57px;
+  }
+}
+
+.products__drop-icon {
+  width: 90px;
+  height: 90px;
+  background-image: url("../../img/click.png");
+  position: relative;
+
+}
+
+.products__drop-menu {
+  min-width: 273px;
+  width: 100%;
+  height: 291px;
+  background-color: rgba(0, 0, 0, 0.06);
+  position: absolute;
+  padding: 28px 25px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  left: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  color: rgba(0, 0, 0, 1);
+  display: none; 
+}
+//   Не забудь убрать display none!!!!
+
+.products__drop-menu-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products__drop-menu-img {
+  padding-right: 20px;
+}
+
+.products__drop-menu-title {
+  padding-right: 30px;
+}
+
+.products__drop-menu-count {
+  font-weight: 400;
+}
+
+.products__slide-arrows {
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  position: absolute;
+  width: 100%;
+}
+
+.products__slide-arrow {
+
+  width: 14px;
+  height: 27px;
+}
