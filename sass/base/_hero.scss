@@ -29,7 +29,15 @@
 
     @include tablets {
       width: 100%;
-      min-width: 655px;
+      min-width: 550px;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @include phones {
+      width: 100%;
+      min-width: 320px;
       align-items: center;
       text-align: center;
     }
@@ -43,7 +51,7 @@
 .hello__title {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 3rem;
   text-transform: uppercase;
   margin-top: 0;
 
@@ -63,7 +71,7 @@
   margin-bottom: 40px;
 
   @include tablets {
-    // padding: 0 25%;
+    padding: 0 25%;
   }
 
   @include phones {

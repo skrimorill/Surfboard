@@ -15,11 +15,29 @@
     column-gap: 80px;
     width: 100%;
     flex-shrink: 0;
+
+    @include tablets{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__preview {
     width: 100%;
     max-width: 397px;
+
+    @include tablets{
+    max-width: 278px;
+    max-height: 288px;
+    margin-bottom: 80px;
+    }
+
+    @include phones{
+      max-width: 158px;
+      max-height: 168px;
+      margin-bottom: 80px;
+      }
   }
 
   &__info {
@@ -28,6 +46,11 @@
     flex-direction: column;
     row-gap: 23px;
     padding-bottom: 85px;
+
+    @include tablets{
+      padding-bottom: 0;
+      text-align: center;
+    }
  }
 
  &__title {
@@ -36,6 +59,12 @@
   line-height: 2.86rem;
   color: #292929;
   text-transform: uppercase;
+
+  @include tablets{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
  }
 
  &__desk {
@@ -83,6 +112,10 @@
   background-image: url("../../img/click.png");
   position: relative;
 
+  @include tablets {
+    display: none;
+  }
+
 }
 
 .products__drop-menu {
@@ -127,6 +160,10 @@
   top: 50%;
   position: absolute;
   width: 100%;
+
+  @include tablets{
+    top: 20%;
+  }
 }
 
 .products__slide-arrow {

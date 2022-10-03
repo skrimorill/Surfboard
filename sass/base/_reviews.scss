@@ -62,7 +62,11 @@
 
 .reviews__content {
   flex: 1;
-  margin-left: 2.5rem;
-  margin-top: 2rem;
-  margin-right: 5rem;
-}
+  padding-left: 40px;
+  padding-right: 140px;
+  padding-bottom: 25px;
+
+  @include tablets {
+    padding: 0 40px;
+  }
+} 

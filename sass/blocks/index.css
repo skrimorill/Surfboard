@@ -30,7 +30,16 @@
 @media (max-width: 768px) {
   .hero__title-section {
     width: 100%;
-    min-width: 655px;
+    min-width: 550px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .hero__title-section {
+    width: 100%;
+    min-width: 320px;
     align-items: center;
     text-align: center;
   }
@@ -42,7 +51,7 @@
 .hello__title {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 3rem;
   text-transform: uppercase;
   margin-top: 0;
 }
@@ -62,6 +71,11 @@
   font-weight: 400;
   line-height: 1.5rem;
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .hello__text {
+    padding: 0 25%;
+  }
 }
 @media (max-width: 480px) {
   .hello__text {
@@ -609,7 +623,7 @@ template {
 .section__title {
   font-size: 3.1rem;
   font-weight: 700;
-  margin-bottom: 3.6rem;
+  margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
   color: #000;
@@ -704,11 +718,18 @@ template {
   background: rgba(75, 75, 78, 0.3137254902);
   border-radius: 50%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 @media (max-width: 480px) {
   .benefits__img {
     margin-bottom: 0;
     margin-right: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .benefits__img {
+    width: 6rem;
+    height: 6rem;
   }
 }
 
@@ -717,6 +738,10 @@ template {
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 .reviews__display {
@@ -787,9 +812,14 @@ template {
 
 .reviews__content {
   flex: 1;
-  margin-left: 2.5rem;
-  margin-top: 2rem;
-  margin-right: 5rem;
+  padding-left: 40px;
+  padding-right: 140px;
+  padding-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .reviews__content {
+    padding: 0 40px;
+  }
 }
 
 .interactive-avatar {
@@ -831,6 +861,9 @@ template {
   background: url("../../img/form-fon.jpg") center center no-repeat;
   background-size: cover;
 }
+.order-section:before {
+  background-color: rgba(5, 3, 2, 0.822);
+}
 
 .order__title {
   color: #fff;
@@ -847,7 +880,7 @@ template {
 @media (max-width: 768px) {
   .form {
     flex-direction: column;
-    padding: 0 19%;
+    padding: 0 5%;
   }
 }
 @media (max-width: 480px) {
@@ -878,6 +911,11 @@ template {
   display: flex;
   margin-bottom: 16px;
 }
+@media (max-width: 768px) {
+  .form__row {
+    margin-bottom: 5px;
+  }
+}
 
 .form__block {
   flex: 1;
@@ -890,7 +928,7 @@ template {
 .form__input {
   width: 100%;
   border: none;
-  padding: 1rem 0.6rem;
+  padding: 7px 9px;
   border: 0.2rem solid transparent;
   border-radius: 0.2rem;
 }
@@ -912,6 +950,7 @@ template {
 @media (max-width: 480px) {
   .form__controls {
     justify-content: center;
+    margin-bottom: 0;
   }
 }
 
@@ -1127,9 +1166,30 @@ template {
   width: 100%;
   flex-shrink: 0;
 }
+@media (max-width: 768px) {
+  .products__item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
 .products__preview {
   width: 100%;
   max-width: 397px;
+}
+@media (max-width: 768px) {
+  .products__preview {
+    max-width: 278px;
+    max-height: 288px;
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .products__preview {
+    max-width: 158px;
+    max-height: 168px;
+    margin-bottom: 80px;
+  }
 }
 .products__info {
   flex: 1;
@@ -1138,12 +1198,25 @@ template {
   row-gap: 23px;
   padding-bottom: 85px;
 }
+@media (max-width: 768px) {
+  .products__info {
+    padding-bottom: 0;
+    text-align: center;
+  }
+}
 .products__title {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 2.86rem;
   color: #292929;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .products__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
 }
 .products__desk {
   font-size: 1.2rem;
@@ -1185,6 +1258,11 @@ template {
   height: 90px;
   background-image: url("../../img/click.png");
   position: relative;
+}
+@media (max-width: 768px) {
+  .products__drop-icon {
+    display: none;
+  }
 }
 
 .products__drop-menu {
@@ -1228,6 +1306,11 @@ template {
   top: 50%;
   position: absolute;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .products__slide-arrows {
+    top: 20%;
+  }
 }
 
 .products__slide-arrow {
