@@ -2,7 +2,7 @@ class Modal {
   constructor(selector) {
     this.fullscreenMenu = document.querySelector(selector)
     document.addEventListener("click", e => {
-      const targetButtonEvent = e.target.closest('[data-menu]')
+      const targetButtonEvent = e.target.closest('[data-event]')
       if(targetButtonEvent) {
         const event = targetButtonEvent.dataset.event
         console.log(event);
@@ -22,6 +22,8 @@ class Modal {
 }
 
 const fullscreenMenu = new Modal("#full-menu")
+
+
 
 const INITIAL_NUMBER_SLIDE = 1
 
