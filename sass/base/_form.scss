@@ -1,10 +1,6 @@
 .order-section {
-  background: url("../../img/form-fon.jpg") center center no-repeat;
+  background: linear-gradient(rgba(121, 111, 111, 0.815), rgba(0, 0, 0, 0.8)), url("../../img/form-fon.jpg") center center no-repeat;
   background-size: cover;
-  
-  &:before {
-    background-color: rgba(5, 3, 2, 0.822);
-  }
 }
 
 .order__title {

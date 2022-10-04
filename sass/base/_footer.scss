@@ -4,8 +4,12 @@
   align-items: center;
   color: #292929;
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
   max-width: 950px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
 
   @include phones {
     flex-direction: column;
