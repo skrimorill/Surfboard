@@ -1,5 +1,6 @@
 .benefits {
   display: flex;
+
   @include phones {
     display: flex;
     flex-direction: column;
@@ -17,11 +18,15 @@
   }
 
   &:before {
-    content: url(./img/circles.png);
+    content: url(../../img/circles.png);
     position: absolute;
     top: 4rem;
     right: 0;
     transform: translateX(50%);
+
+    @include tablets {
+      display: none;
+    }
   }
 
   &:first-child {
@@ -31,8 +36,8 @@
   &:last-child {
     padding-right: 0;
     
-    &:before {
-      display: none;
+  &:before {
+    display: none;
     }
   }
 }

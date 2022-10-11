@@ -22,7 +22,6 @@
   width: 46%;
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: flex-start;
   align-items: start;
   margin-top: auto;
@@ -673,11 +672,16 @@ template {
   }
 }
 .benefits__item:before {
-  content: url(./img/circles.png);
+  content: url(../../img/circles.png);
   position: absolute;
   top: 4rem;
   right: 0;
   transform: translateX(50%);
+}
+@media (max-width: 768px) {
+  .benefits__item:before {
+    display: none;
+  }
 }
 .benefits__item:first-child {
   padding-left: 0;
@@ -715,7 +719,7 @@ template {
   width: 9rem;
   height: 9rem;
   position: relative;
-  background: rgba(75, 75, 78, 0.3137254902);
+  background-color: rgb(242, 245, 244);
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -822,6 +826,27 @@ template {
   }
 }
 
+.reviews__list {
+  display: flex;
+}
+
+.reviews__item.active {
+  position: static;
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.reviews__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  opacity: 0;
+}
+
 .interactive-avatar {
   width: 5rem;
   height: 5.2rem;
@@ -830,7 +855,8 @@ template {
   overflow: hidden;
   position: relative;
 }
-.interactive-avatar--active {
+
+.interactive-avatar.active {
   border-color: #FEDB3F;
 }
 
@@ -1016,6 +1042,7 @@ template {
 .section__map {
   background: url("../../img/map.png") center center no-repeat;
   position: relative;
+  background-size: cover;
 }
 
 .menu {
@@ -1073,7 +1100,6 @@ template {
   color: #292929;
   margin: 0 auto;
   width: 100%;
-  max-width: 950px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1152,6 +1178,12 @@ template {
 .button--icon--close {
   background-color: inherit;
   border: none;
+}
+
+.bx-wrapper {
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .products__list-wrapper {
@@ -1262,6 +1294,9 @@ template {
   background-image: url("../../img/click.png");
   position: relative;
 }
+.products__drop-icon:hover .products__drop-menu {
+  opacity: 1;
+}
 @media (max-width: 768px) {
   .products__drop-icon {
     display: none;
@@ -1272,7 +1307,7 @@ template {
   min-width: 273px;
   width: 100%;
   height: 291px;
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: #B3B3BF;
   position: absolute;
   padding: 28px 25px 30px 30px;
   display: flex;
@@ -1283,7 +1318,7 @@ template {
   font-weight: 500;
   line-height: 1.6rem;
   color: rgb(0, 0, 0);
-  display: none;
+  opacity: 0;
 }
 
 .products__drop-menu-item {
@@ -1317,6 +1352,101 @@ template {
 }
 
 .products__slide-arrow {
-  width: 14px;
-  height: 27px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.team__avatars {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  justify-content: center;
+}
+
+.team__avatar {
+  flex: 1;
+  position: relative;
+}
+
+.team__avatar-img {
+  max-width: 220px;
+  max-height: 290px;
+}
+
+.team__triangle {
+  width: 9px;
+  height: 9px;
+  background: url("../../img/triangle2.png") center center no-repeat;
+}
+
+.team__member-status {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 0;
+  width: 100%;
+  padding-right: 28px;
+  overflow: hidden;
+  position: absolute;
+}
+.team__member-status--active {
+  height: 80px;
+}
+
+.team__member-block {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.team__member-block-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.team__member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.team__member:hover .team__member-status {
+  height: 60px;
+}
+.team__member-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #292929;
+}
+
+.team__avatars--mobile {
+  display: none;
+}
+
+.modal {
+  display: none;
+}
+.modal.error-modal.modal__content {
+  color: red;
+}
+.modal.fancybox-content {
+  padding: 0 !important;
+}
+.modal.fancybox-buttons {
+  display: none;
+}
+
+.modal__container {
+  background: #fff;
+  padding: 35px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__content {
+  margin-bottom: 15px;
+  color: #000;
 }/*# sourceMappingURL=index.css.map */

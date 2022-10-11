@@ -1,0 +1,69 @@
+.team__avatars {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.team__avatar {
+  flex: 1;
+  position: relative;
+}
+
+.team__avatar-img {
+  max-width: 220px;
+  max-height: 290px;
+}
+
+.team__triangle {
+  width: 9px;
+  height: 9px;
+  background: url('../../img/triangle2.png') center center no-repeat;
+}
+
+.team__member-status {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 0;
+  width: 100%;
+  padding-right: 28px;
+  overflow: hidden;
+  position: absolute;
+
+  &--active {
+    height: 80px;
+  }
+}
+
+.team__member-block {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.team__member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+
+  &:hover .team__member-status{
+    height: 60px;
+  }
+
+  &-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #292929;
+  }
+}
+
+.team__avatars--mobile {
+  display: none;
+}

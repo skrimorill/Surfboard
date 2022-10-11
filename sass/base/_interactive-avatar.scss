@@ -5,10 +5,10 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+}
 
-  &--active {
-    border-color: #FEDB3F;
-  }
+.interactive-avatar.active {
+  border-color: #FEDB3F;
 }
 
 .interactive-avatar__link {
