@@ -237,6 +237,30 @@
         </div>
       </div>
     </section>
+    <section class="section player-section">
+      <div class="container">
+        <h2 class="section__title">Как мы работаем</h2>
+        <div class="player-section__container">
+          <div class="player active">
+            <div class="player__wrapper">
+              <div class="player__elem" id="yt-player"></div>
+              <div class="player__splash"></div>
+            </div>
+            <div class="player__controls">
+              <button class="player__start"></button>
+              <div class="player__playback">
+                <button class="player__playback-button"></button>
+              
+              <div class="player__duration">
+              <span class="player__duration-completed">0:00</span>
+              <span class="player__duration-estimate">0:00</span>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section products-section">
       <div class="container">
         <div class="products__list-wrapper">
@@ -564,7 +588,7 @@
           <div class="form__row">
             <label class="form__block">
              <div class="form__title">Имя</div>
-             <input type="text" class="form__input" name="name">
+             <input type="text" class="form__input" name="name" placeholder="name">
             </label>
             <label class="form__block">
              <div class="form__title">Телефон</div>
@@ -600,16 +624,16 @@
           <div class="form__row">
             <label class="form__block">
              <div class="form__title">Комментарий</div>
-             <textarea class="form__input form__input--textarea" id="comment"></textarea>
+             <textarea class="form__input form__input--textarea" id="comment" name="comment"></textarea>
             </label>
             </div>
             <div class="form__controls">
-            <label class="radio">
+            <label class="radio" name="cash">
              <input type="radio" name="option" class="radio__elem">
              <div class="radio__visible"></div>
              <div class="radio__title">Оплата наличными</div>
             </label>
-            <label class="radio">
+            <label class="radio" name="cash">
              <input type="radio" name="option" class="radio__elem">
              <div class="radio__visible"></div>
              <div class="radio__title">Оплата картой</div>
@@ -617,7 +641,7 @@
             </div>
             <div class="form__controls">
               <label class="radio radio__checkbox">
-                <input type="checkbox" class="radio__elem">
+                <input type="checkbox" class="radio__elem" name="dontcall">
                 <div class="radio__visible"></div>
                 <div class="radio__title">Не перезванивать</div>
                </label>
@@ -627,6 +651,7 @@
               <button type="reset" class="button button--transparent">Очистить</button>
             </div>
           </div>
+          <input type="hidden" name="to" value="a.a@mail.ru">
           </form>
         </div>
     </section>
@@ -757,6 +782,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/index.js" defer></script>
 </body>
 </html>
