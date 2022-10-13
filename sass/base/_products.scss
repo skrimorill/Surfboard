@@ -112,6 +112,10 @@
   }
 }
 
+.products__blocked {
+  display: block;
+}
+
 .products__drop-icon {
   width: 90px;
   height: 90px;
@@ -154,10 +158,12 @@
 
 .products__drop-menu-img {
   padding-right: 20px;
+  width: 40px;
 }
 
 .products__drop-menu-title {
   padding-right: 30px;
+  flex: 1;
 }
 
 .products__drop-menu-count {
@@ -177,7 +183,7 @@
 }
 
 .products__slide-arrow {
-  background-color: #fff;
+  background-color: inherit;
   border: none;
   cursor: pointer;
 }

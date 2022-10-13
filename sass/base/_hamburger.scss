@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: space-between;
   display: none;
+  background-color: inherit;
+  border: none;
 
   @include tablets {
     display: inline-flex;
@@ -14,5 +16,6 @@
   display: block;
   background: #fff;
   height: 4px;
+  width: 22px;
   border-radius: 10px;
 }

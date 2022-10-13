@@ -2,16 +2,29 @@
   display: flex;
   column-gap: 20px;
   justify-content: center;
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .team__avatar {
   flex: 1;
   position: relative;
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
 }
 
 .team__avatar-img {
   max-width: 220px;
   max-height: 290px;
+  @include tablets {
+    display: none;
+  }
 }
 
 .team__triangle {
@@ -30,9 +43,6 @@
   overflow: hidden;
   position: absolute;
 
-  &--active {
-    height: 80px;
-  }
 }
 
 .team__member-block {
@@ -53,10 +63,6 @@
   justify-content: center;
   column-gap: 5px;
 
-  &:hover .team__member-status{
-    height: 60px;
-  }
-
   &-name {
     font-size: 1.4rem;
     font-weight: 700;
@@ -64,6 +70,23 @@
   }
 }
 
+.active .team__member {
+  @include tablets {
+    order: -1;
+  }
+}
+
 .team__avatars--mobile {
   display: none;
+}
+
+.active .team__avatar-img {
+  display: block;
+}
+
+.active .team__member-status {
+  @include tablets {
+    position: static;
+    height: 100%;
+  }
 }

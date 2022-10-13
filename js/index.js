@@ -5,7 +5,6 @@ class Modal {
       const targetButtonEvent = e.target.closest('[data-event]')
       if(targetButtonEvent) {
         const event = targetButtonEvent.dataset.event
-        console.log(event);
         this[event]()
       }
     })
@@ -21,55 +20,14 @@ class Modal {
   }
 }
 
+
 const fullscreenMenu = new Modal("#full-menu")
 
 
 
 const INITIAL_NUMBER_SLIDE = 1
 
-//SLIDER
 
-// class Slider {
-//   constructor (selector) {
-//     this.slider = document.querySelector(selector)
-//     this.courent = INITIAL_NUMBER_SLIDE 
-//     this.slideCount = this.slider.children.length
-//   }
-//   next() {
-//     if(this.courent < this.slideCount) {
-//       this.courent++
-//     }
-//     this.trannslate()
-//   }
-
-//   prev() {
-//     if(this.courent > 1) {
-//       this.courent--
-//     }
-//     this.trannslate()
-//   }
-
-//   trannslate() {
-//     this.slider.style.transform = `translateX(-${(this.courent - 1) * 100}%)`
-//   }
-
-//   setEventListener() {
-//   const sliderPrev = document.querySelector("#slider-prev")
-//   const sliderNext = document.querySelector("#slider-next")
-  
-//   sliderPrev.addEventListener('click', () => {
-//     this.prev()
-//   })
-
-//   sliderNext.addEventListener('click', () => {
-//     this.next()
-//   })
-//   }
-// }
-
-
-// const slider = new Slider('#products-slider')
-// slider.setEventListener()
 
 //SLIDER JQUERY 
 
@@ -88,70 +46,6 @@ $('.products__slide-arrow--next').click(e => {
   
   sliderProducts.goToNextSlide()
 })
-
-//TEAM
-// const teamMember = document.querySelectorAll('.team__member')
-// const teamMemberStatus = document.querySelector('.team__member-status')
-
-// const openItem = item => {
-//   const container = item.closest('.team__avatar')
-//   const content = container.find('.team__member-status')
-//   const textcontent = content.find('.team__member-block')
-//   const reqHeight = textcontent.height()
-
-//   container.addClass('active-member')
-//   content.height(reqHeight)
-// }
-
-// const closeEvery = container => {
-//   const items = container.find('.team__member-status')
-//   const itemCont = container.find('.team__avatar')
-//   itemCont.removeClass('active-member')
-//   items.height(0)
-// }
-
-// $('.team__member').on('click', e => {
-
-//   const $this = $(e.currentTarget);
-//   const cont = $this.closest('.team__avatars')
-//   const elemCont = $this.closest('.team__avatar')
-
-//   if(elemCont.hasClass('active-member')) {
-//     closeEvery(cont)
-//   } else {
-//     closeEvery(cont)
-//     console.log($this);
-
-//     openItem($this)
-//   }
- 
-// })
-
-// let teamMemberStatusHeight = 68
-
-// const teamFunc = function() {
-//   for(let el of teamMember) {
-//     el.addEventListener('click', () => {
-//       let card = this.
-//       console.log(card);
-//       card.teamMemberStatus.style.height = `${teamMemberStatusHeight}px`;
-//     })
-// }
-// }
-
-// teamFunc()
-
-// teamMember.addEventListener('click', (event) => {
-//   for (let el of teamMember) {
-//     console.log(el);
-//     if (event.target === el) {
-//       teamMemberStatus.style.height = `${teamMemberStatusHeight}px`;
-//     }
-//   }
-
-//   console.log(teamTargetEvent);
-  
-// })
 
 
 
@@ -343,5 +237,78 @@ function onYouTubeIframeAPIReady() {
     }
   });
 }
+
+// TEAM
+
+const openItem = item => {
+  const container = item.closest(".team__avatar")
+  const contentBlock = container.find(".team__member-status")
+  const textBlock = container.find(".team__member-block")
+  const reqHeight = textBlock.height()
+
+  container.addClass("active")
+  contentBlock.height(reqHeight)
+}
+
+const closeEveryItem = container => {
+  const items = container.find(".team__member-status")
+  const itemsContainer = container.find(".team__avatar")
+  
+  itemsContainer.removeClass("active")
+  items.height(0)
+}
+
+$('.team__member').click(e => {
+  const $this = $(e.currentTarget)
+  const container2 = $this.closest(".team__avatars")
+  const elemContainer = $this.closest(".team__avatar")
+
+
+  if (elemContainer.hasClass("active")) {
+    closeEveryItem(container2)
+  } else {
+    closeEveryItem(container2)
+    openItem($this)
+  }
+
+})
+
+
+// MAP
+
+let myMap;
+const init = () => {
+  myMap = new ymaps.Map("map", {
+    center: [55.752004, 37.576133],
+    zoom: 11,
+    controls: []
+  });
+
+  let dot = new ymaps.Placemark([55.752004, 37.576133], {}, {
+    draggable: false,
+    iconLayout: 'default#image',
+    iconImageHref: "./img/marker.png",
+    iconImageSize: [46, 57],
+    iconImageOffset: [-35, -52],
+  
+  }) 
+
+  
+
+  const myCollection = new ymaps.GeoObjectCollection({}, {
+    draggable: false,
+    iconLayout: 'default#image',
+    iconImageHref: './img/icons/marker.svg',
+    iconImageSize: [46, 57],
+    iconImageOffset: [-35, -52]
+  });
+  
+  myMap.geoObjects.add(dot);
+  
+  myMap.behaviors.disable('scrollZoom');
+ };
+ 
+ymaps.ready(init);
+
 
 

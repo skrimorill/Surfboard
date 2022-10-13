@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <link rel="stylesheet" href="./sass/blocks/index.css">
   <title>Document</title>
@@ -315,18 +315,18 @@
                 </p>
                 <ul class="products__weight">
                   <li class="products__weight-title">
-                    <span class="products__weight-title">
+                    <span class="products__weight-title products__blocked">
                       Длина доски
                     </span>
-                    <span class="products__weight-count">
+                    <span class="products__weight-count products__blocked">
                       от 2,5 метров
                     </span>
                   </li>
                   <li class="products__weight-title">
-                    <span class="products__weight-title">
+                    <span class="products__weight-title products__blocked">
                       Ширина доски
                     </span>
-                    <span class="products__weight-count">
+                    <span class="products__weight-count products__blocked">
                       от 40 сантиметров
                     </span>
                   </li>
@@ -389,18 +389,18 @@
                 </p>
                 <ul class="products__weight">
                   <li class="products__weight-title">
-                    <span class="products__weight-title">
+                    <span class="products__weight-title products__blocked">
                       Длина доски
                     </span>
-                    <span class="products__weight-count">
+                    <span class="products__weight-count products__blocked">
                       от 1,5 метров
                     </span>
                   </li>
                   <li class="products__weight-title">
-                    <span class="products__weight-title">
+                    <span class="products__weight-title products__blocked">
                       Ширина доски
                     </span>
-                    <span class="products__weight-count">
+                    <span class="products__weight-count products__blocked">
                       от 30 сантиметров
                     </span>
                   </li>
@@ -431,7 +431,7 @@
           команда
         </h2>
         <ul class="team__avatars">
-          <li class="team__avatar team__avatar--active">
+          <li class="team__avatar">
             <div class="team__avatar-img">
               <img src="./img/boris.png" alt="avatar">
             </div>
@@ -473,81 +473,7 @@
             </div>
             <div class="team__member">
               <span class="team__member-name">
-                Борис Федорович
-              </span>
-              <div class="team__triangle">
-              </div>
-            </div>
-            <div class="team__member-status">
-              <div class="team__member-block">
-              <span class="team__member-block-title">Спортсмен</span>
-              <span class="team__member-block-desk">Участвует в разработке серфбордов</span>
-              </div>
-            </div>
-          </li>
-          <li class="team__avatar">
-            <div class="team__avatar-img">
-              <img src="./img/katia.png" alt="avatar">
-            </div>
-            <div class="team__member">
-              <span class="team__member-name">
-                Екатерина Иванова
-              </span>
-              <div class="team__triangle">
-              </div>
-            </div>
-            <div class="team__member-status">
-              <div class="team__member-block">
-              <span class="team__member-block-title">Тестировщик</span>
-              <span class="team__member-block-desk">Участвует в разработке серфбордов</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <ul class="team__avatars--mobile">
-          <li class="team__avatar team__avatar--active">
-            <div class="team__avatar-img">
-              <img src="./img/boris.png" alt="avatar">
-            </div>
-            <div class="team__member">
-              <span class="team__member-name">
-                Борис Федорович
-              </span>
-              <div class="team__triangle">
-              </div>
-            </div>
-            <div class="team__member-status">
-              <div class="team__member-block">
-                <span class="team__member-block-title">Главный технолог</span>
-              <span class="team__member-block-desk">Отвечает за материалы и разработку досок</span>
-              </div>
-            </div>
-          </li>
-          <li class="team__avatar">
-            <div class="team__avatar-img">
-              <img src="./img/olga-team.png" alt="avatar">
-            </div>
-            <div class="team__member">
-              <span class="team__member-name">
-                Ольга Невзорова
-              </span>
-              <div class="team__triangle">
-              </div>
-            </div>
-            <div class="team__member-status">
-              <div class="team__member-block">
-              <span class="team__member-block-title">Дизайнер</span>
-              <span class="team__member-block-desk">Создает дизайн серфбордов</span>
-              </div>
-            </div>
-          </li>
-          <li class="team__avatar">
-            <div class="team__avatar-img">
-              <img src="./img/ingvar.png" alt="avatar">
-            </div>
-            <div class="team__member">
-              <span class="team__member-name">
-                Борис Федорович
+                Кирилл Матросов
               </span>
               <div class="team__triangle">
               </div>
@@ -655,7 +581,7 @@
           </form>
         </div>
     </section>
-    <section class="section section__map">
+    <section class="section section__map" id="map">
       <footer class="footer">
         <div class="footer__coll">
           <address class="footer__address">
@@ -762,7 +688,7 @@
           </li>
         </ul>
       </nav>
-      <button class="button--full button--icon--close">
+      <button class="button-full button-full-close" data-event="close">
         <svg class="close-svg svg-icon">
           <use xlink:href="./img/sprite.svg#close2"></use>
         </svg>
@@ -778,11 +704,13 @@
         </div>
       </div>
     </div>
-    <script src="jquery.fancybox.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="./js/index.js" defer></script>
 </body>
 </html>

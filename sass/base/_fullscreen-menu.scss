@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  overflow: hidden;
 
   &__close {
     position: absolute;
@@ -47,10 +48,18 @@
 .close-svg {
   height: 20px;
   width: 20px;
-  fill: #fff;
+  fill: rgb(156, 135, 135);
 }
 
-.button--icon--close {
+.button-full-close {
   background-color: inherit;
   border: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+
+.fullscreen-menu--opened .menu {
+  display: flex;
 }
