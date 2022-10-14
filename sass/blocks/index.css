@@ -1094,6 +1094,7 @@ template {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
   color: #292929;
   margin: 0 auto;
   width: 100%;
@@ -1500,4 +1501,68 @@ template {
   background: #404040;
   display: flex;
   flex-direction: column;
+}
+
+.player-section__container {
+  display: flex;
+  justify-content: center;
+}
+
+.products-menu-section {
+  background: url("../../img/slide1.jpg") center center/cover no-repeat;
+  position: relative;
+  color: #fff;
+}
+
+.products-menu-section-title {
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.products-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  width: 207px;
+}
+.products-menu__content {
+  background: rgba(47, 50, 52, 0.9);
+  width: 0;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.7s;
+}
+.products-menu__title {
+  position: relative;
+  width: 100%;
+}
+
+.products-menu-text {
+  position: absolute;
+  top: 230px;
+  left: 26%;
+  font-size: 22px;
+  font-weight: 700;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.products-menu__item {
+  display: flex;
+}
+
+.products-menu__close {
+  background: inherit;
+  border: none;
+}
+
+.products-menu__close-svg {
+  height: 20px;
+  width: 20px;
+  fill: #fff;
 }/*# sourceMappingURL=index.css.map */

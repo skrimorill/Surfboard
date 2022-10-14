@@ -312,3 +312,24 @@ ymaps.ready(init);
 
 
 
+// products-menu-section 
+
+const mesureWidth = () => {
+  return 500
+}
+
+openItem = item => {
+  const hiddenContent = item.find('.product-menu__content')
+  const reqWidth = mesureWidth()
+
+  hiddenContent.width(reqWidth)
+}
+
+$('.products-menu__title').on('click', e => {
+  e.preventDefault();
+
+  $this = $(e.currentTarget)
+  const item = $this.closest('.products-menu__item')
+
+  openItem(item)
+})
