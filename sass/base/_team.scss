@@ -22,9 +22,11 @@
 .team__avatar-img {
   max-width: 220px;
   max-height: 290px;
+  
   @include tablets {
     display: none;
   }
+
 }
 
 .team__triangle {

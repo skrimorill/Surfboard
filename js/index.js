@@ -314,22 +314,197 @@ ymaps.ready(init);
 
 // products-menu-section 
 
-const mesureWidth = () => {
-  return 500
+const mesureWidth = item => {
+  const screenWidth = $(window).width()
+  const container = item.closest('.products-menu')
+  const titlesBlocks = container.find('.products-menu__title')
+  const titlesWidth = titlesBlocks.width() * titlesBlocks.length
+
+  console.log(titlesWidth);
+
+  const isMobile = window.matchMedia('(max-width: 768px)').matches
+
+  if (isMobile) {
+    return screenWidth - titlesBlocks
+  } else {
+    return 500
+  }
+  
 }
 
-openItem = item => {
+const closeEveryItemContainer = container => {
+  const items = container.find('.products-menu__item');
+  const content = container.find('.products-menu__content');
+
+  items.removeClass('active')
+  content.width(0)
+}
+
+const openItemCont = item => {
   const hiddenContent = item.find('.product-menu__content')
-  const reqWidth = mesureWidth()
+  const reqWidth = mesureWidth(item)
+
+
+  item.addClass('active')
 
   hiddenContent.width(reqWidth)
+
 }
 
 $('.products-menu__title').on('click', e => {
   e.preventDefault();
 
-  $this = $(e.currentTarget)
+  const $this = $(e.currentTarget)
   const item = $this.closest('.products-menu__item')
+  const itemOpened = item.hasClass('active')
+  const container = $this.closest('.products-menu')
 
-  openItem(item)
+  if (itemOpened) {
+    closeEveryItemContainer(container)
+  } else {
+    closeEveryItemContainer(container)
+    openItemCont(item)
+  }
 })
+
+$('.products-menu__close').on('click', e => {
+  e.preventDefault()
+
+  closeEveryItemContainer($('.products-menu'))
+
+})
+
+
+
+
+
+
+
+
+
+
+// OPS
+
+const sections = $('section')
+const display = $('.maincontent')
+
+const mobileDetect = new MobileDetect(window.navigator.userAgent)
+const isMobile = mobileDetect.mobile()
+
+
+let inScroll = false
+
+sections.first().addClass('active')
+
+const performTransition = (sectionEq) => {
+
+  if (inScroll === false) {
+    inScroll === true
+    const position = sectionEq * -100;
+
+      const currentSection = sections.eq(sectionEq)
+      const menuTheme = currentSection.attr('data-sidemenu-theme')
+      const sideMenu = $('.fixed-menu')
+
+      if (menuTheme === 'black') {
+
+        sideMenu.addClass('.fixed-menu--shadowed')
+
+      } else {
+
+        sideMenu.removeClass('.fixed-menu--shadowed')
+      }
+    display.css({
+      transform: `translateY(${position}%)`
+    })
+  
+    sections.eq(sectionEq).addClass('active').siblings().removeClass('active')
+  
+
+
+
+  setTimeout(() => {
+    inScroll = false 
+        sideMenu
+        .find('.fixed-menu__item')
+        .eq(sectionEq)
+        .addClass('fixed-menu__item--active')
+        .siblings()
+        .removeClass('fixed-menu__item--active')
+  }, 1300)
+}
+}
+
+const scrollViewport = direction => {
+
+  const activeSection = sections.filter('.active')
+  const nextSection = activeSection.next()
+  const prevSection = activeSection.prev()
+
+  if (direction === 'next' && nextSection.length) {
+    performTransition(nextSection.index())
+  }
+
+  if (direction === 'prev' && prevSection.length) {
+    performTransition(prevSection.index())
+  }
+}
+
+$(window).on('wheel', e => {
+  const deltaY = e.originalEvent.deltaY
+
+  if (deltaY > 0) {
+    scrollViewport('next')
+  }
+
+  if (deltaY < 0) {
+    scrollViewport('prev')
+  }
+})
+
+$(window).on('keydown', e => {
+  
+  const tagName = e.target.tagName.toLowerCase()
+
+  if(tagName !== 'input' && tagName !== 'textarea') {
+
+    switch (e.keyCode) {
+
+      case 38:
+        scrollViewport('prev')
+        break;
+  
+      case 40:
+        scrollViewport('next')
+        break;
+    }
+  }
+})
+
+$('.wrapper').on('touchmove', e => e.preventDefault())
+
+$('[data-scroll-to]').click(e => {
+e.preventDefault();
+
+const $this = $(e.currentTarget)
+const target = $this.attr('data-scroll-to')
+reqSection = $(`[data-section-id=${target}]`)
+
+performTransition(reqSection.index())
+
+})
+
+if (isMobile) {
+
+$('body').swipe( {
+  swipe:function(event, direction,) {
+    const scroller = viewportScroller()
+    let scrollDirection = '' 
+
+    if (direction === 'up') scrollDirection = 'next'
+    if (direction === 'down') scrollDirection = 'prev'
+  
+    scroller[scrollDirection]()
+    }
+  })
+}

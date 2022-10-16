@@ -17,7 +17,7 @@
   top: 0;
   bottom: 0;
   display: flex;
-  width: 207px;
+  // width: 207px;
 
 
   &__content {
@@ -28,6 +28,10 @@
     transition: width .7s;
   }
 
+  &__container {
+    padding: 40px 73px 45px 26px;
+  }
+
   &__title {
     position: relative;
     width: 100%;
@@ -36,12 +40,17 @@
 
 .products-menu-text {
   position: absolute;
-  top: 230px;
-  left: 26%;
-  font-size: 22px;
+  bottom: 1%;
+  left: 4%;
+  font-size: 48px;
   font-weight: 700;
   writing-mode: vertical-lr; 
   text-orientation: upright;
+}
+
+.products-menu-image {
+  height: 100%;
+  object-fit: cover;
 }
 
 .products-menu__item {
@@ -51,6 +60,8 @@
 .products-menu__close {
   background: inherit;
   border: none;
+  top: 20px;
+  right: 20px;
 }
 
 .products-menu__close-svg {
