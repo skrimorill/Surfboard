@@ -247,14 +247,18 @@
               <div class="player__splash"></div>
             </div>
             <div class="player__controls">
-              <button class="player__start"></button>
+              <button class="player__start">
+                <img src="./img/play.png" alt="playbutton" class="player__start-button">
+              </button>
               <div class="player__playback">
-                <button class="player__playback-button"></button>
+                <input type="range" name="" id="" class="player__playback-range">
+              </div>
               <div class="player__duration">
-              <span class="player__duration-completed">0:00</span>
-              <span class="player__duration-estimate">0:00</span>
+                <div class="player__volume">
+                  <img src="./img/volume.png" alt="volumetip">
+                </div>
+                <input type="range" name="" id="" class="player__volume-level">
             </div>
-          </div>
           </div>
           </div>
         </div>
@@ -772,7 +776,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>

@@ -37,3 +37,16 @@
   }
 }
 
+.fixed-menu--shadowed {
+  & .fixed__link {
+
+    &:before {
+      background: #000;
+    }
+  }
+
+  & .fixed__item--active .fixed__link {
+    border-color: #000;
+  }
+}
+

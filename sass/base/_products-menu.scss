@@ -17,7 +17,7 @@
   top: 0;
   bottom: 0;
   display: flex;
-  // width: 207px;
+  width: 207px;
 
 
   &__content {
@@ -26,6 +26,7 @@
     position: relative;
     overflow: hidden;
     transition: width .7s;
+    flex: 1;
   }
 
   &__container {
@@ -34,7 +35,7 @@
 
   &__title {
     position: relative;
-    width: 100%;
+    width: 205px;
   }
 }
 

@@ -31,21 +31,21 @@ const INITIAL_NUMBER_SLIDE = 1
 
 //SLIDER JQUERY 
 
-const sliderProducts = $('.products__list').bxSlider({
-  pager: false,
-  controls: false,
-})
+// const sliderProducts = $('.products__list').bxSlider({
+//   pager: false,
+//   controls: false,
+// })
 
-$('.products__slide-arrow--prev').click(e => {
-  e.preventDefault()
+// $('.products__slide-arrow--prev').click(e => {
+//   e.preventDefault()
   
-  sliderProducts.goToPrevSlide()
-})
-$('.products__slide-arrow--next').click(e => {
-  e.preventDefault()
+//   sliderProducts.goToPrevSlide()
+// })
+// $('.products__slide-arrow--next').click(e => {
+//   e.preventDefault()
   
-  sliderProducts.goToNextSlide()
-})
+//   sliderProducts.goToNextSlide()
+// })
 
 
 
@@ -225,18 +225,45 @@ new AjaxForm('#form', {
 
 // PLAYER
 
-var player;
+let player;
+
+const playerContainer = $('.player')
+
+let eventsInit = () => {
+  $(".player__start").click(e => {
+    e.preventDefault();
+  
+    if (playerContainer.hasClass("paused")) {
+      playerContainer.removeClass("paused");
+      player.pauseVideo();
+    } else {
+      playerContainer.addClass("paused");
+      player.playVideo();
+    }
+  })
+}
+
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
     height: '405',
     width: '660',
-    videoId: 'https://youtu.be/qIpHp72uMfc',
+    videoId: 'hk7bPQJmC9w',
     events: {
       // 'onReady': onPlayerReady,
       // 'onStateChange': onPlayerStateChange
+    },
+    playerVars: {
+      controls: 0,
+      disablekb: 1,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
     }
   });
 }
+
+eventsInit();
 
 // TEAM
 
@@ -341,7 +368,7 @@ const closeEveryItemContainer = container => {
 }
 
 const openItemCont = item => {
-  const hiddenContent = item.find('.product-menu__content')
+  const hiddenContent = item.find('.products-menu__content')
   const reqWidth = mesureWidth(item)
 
 
@@ -399,7 +426,7 @@ sections.first().addClass('active')
 const performTransition = (sectionEq) => {
 
   if (inScroll === false) {
-    inScroll === true
+    inScroll = true
     const position = sectionEq * -100;
 
       const currentSection = sections.eq(sectionEq)
@@ -408,11 +435,11 @@ const performTransition = (sectionEq) => {
 
       if (menuTheme === 'black') {
 
-        sideMenu.addClass('.fixed-menu--shadowed')
+        sideMenu.addClass('fixed-menu--shadowed')
 
       } else {
 
-        sideMenu.removeClass('.fixed-menu--shadowed')
+        sideMenu.removeClass('fixed-menu--shadowed')
       }
     display.css({
       transform: `translateY(${position}%)`
@@ -498,7 +525,7 @@ if (isMobile) {
 
 $('body').swipe( {
   swipe:function(event, direction,) {
-    const scroller = viewportScroller()
+    const scroller = scrollViewport()
     let scrollDirection = '' 
 
     if (direction === 'up') scrollDirection = 'next'
