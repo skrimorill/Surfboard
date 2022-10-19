@@ -72,7 +72,7 @@
   }
 }
 
-.active .team__member {
+.team__avatar--active .team__member {
   @include tablets {
     order: -1;
   }
@@ -82,11 +82,11 @@
   display: none;
 }
 
-.active .team__avatar-img {
+.team__avatar--active .team__avatar-img {
   display: block;
 }
 
-.active .team__member-status {
+.team__avatar--active .team__member-status {
   @include tablets {
     position: static;
     height: 100%;

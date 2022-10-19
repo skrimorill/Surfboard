@@ -154,7 +154,7 @@
         <div class="reviews">
           <div class="reviews__display">
             <ul class="reviews__list">
-              <li class="reviews__item active" data-linked-with="one">
+              <li class="reviews__item reviews__switcher-item--active" data-linked-with="one">
                 <div class="reviews__display-inner">
                   <div class="reviews__avatar">
                     <img src="./img/olga.png" alt="avatar" class="reviews__avatar">
@@ -218,7 +218,7 @@
             </ul>
           </div>
           <ul class="reviews__switcher">
-            <li class="reviews__switcher-item interactive-avatar active" data-open="one">
+            <li class="reviews__switcher-item interactive-avatar" data-open="one">
               <a href="#" class="reviews__switcher-link interactive-avatar__link">
                 <img src="./img/olga.png" alt="avatar-img" class="interactive-avatar__img">
               </a>
@@ -251,7 +251,7 @@
                 <img src="./img/play.png" alt="playbutton" class="player__start-button">
               </button>
               <div class="player__playback">
-                <input type="range" name="" id="" class="player__playback-range">
+                <input type="range" class="player__playback-range">
               </div>
               <div class="player__duration">
                 <div class="player__volume">
@@ -521,11 +521,6 @@
           </a>
           <div class="products-menu__content">
             <div class="products-menu__container">
-              <button class="products-menu__close" type="button">
-                <svg class="products-menu__close-svg products-menu__svg-icon">
-                  <use xlink:href="./img/sprite.svg#close2"></use>
-                </svg>
-              </button>
               <div class="products-menu__content-text">
                 Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
               </div>
@@ -541,11 +536,6 @@
           </a>
           <div class="products-menu__content">
             <div class="products-menu__container">
-              <button class="products-menu__close" type="button">
-                <svg class="products-menu__close-svg products-menu__svg-icon">
-                  <use xlink:href="./img/sprite.svg#close2"></use>
-                </svg>
-              </button>
               <div class="products-menu__content-text">
                 Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
               </div>
@@ -561,11 +551,6 @@
           </a>
           <div class="products-menu__content">
             <div class="products-menu__container">
-              <button class="products-menu__close" type="button">
-                <svg class="products-menu__close-svg products-menu__svg-icon">
-                  <use xlink:href="./img/sprite.svg#close2"></use>
-                </svg>
-              </button>
               <div class="products-menu__content-text">
                 Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
               </div>
@@ -699,7 +684,7 @@
     </section>
     </div>
   </div>
-    <nav class="fixed-menu fixed-menu--shadowed">
+    <nav class="fixed-menu">
             <ul class="fixed__list">
               <li class="fixed__item fixed__item--active">
                 <a href="#" class="fixed__link" data-scroll-to="hero"></a>
@@ -734,25 +719,25 @@
       <nav class="menu menu--column menu--color--white menu--fz--big">
         <ul class="fullscreen-menu__list">
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">О нас</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="hero">О нас</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Серфборды</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="products">Серфборды</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Команда</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="team">Команда</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Меню</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="products-menu">Меню</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Отзывы</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="reviews">Отзывы</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Как мы работаем</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="player">Как мы работаем</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-event="close">Контакты</a>
+            <a href="#" class="menu__link" data-event="close" data-scroll-to="map">Контакты</a>
           </li>
         </ul>
       </nav>
@@ -772,14 +757,14 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" defer></script>
     <script src="./js/index.js" defer></script>
 </body>
 </html>

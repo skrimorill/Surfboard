@@ -53,12 +53,12 @@ const INITIAL_NUMBER_SLIDE = 1
 //REVIEWS
 
 const findBlockBeAlias = (alias) => {
-  $('.reviews__item').filter((ind, item) => { 
+  return $('.reviews__item').filter((ind, item) => { 
     return $(item).attr('data-linked-with') === alias;
   })
 }
 
-$('.reviews__switcher-link').click(e => {
+  $('.reviews__switcher-link').click(e => {
   e.preventDefault()
 
   const $this = $(e.currentTarget)
@@ -66,8 +66,8 @@ $('.reviews__switcher-link').click(e => {
   const itemShow = findBlockBeAlias(target)
   const curItem = $this.closest('.reviews__switcher-item')
 
-  itemShow.addClass('active').siblings().removeClass('active')
-  curItem.addClass('active').siblings().removeClass('active')
+  itemShow.addClass('reviews__switcher-item--active').siblings().removeClass('reviews__switcher-item--active')
+  curItem.addClass('reviews__switcher-item--active').siblings().removeClass('reviews__switcher-item--active')
 })
 
 
@@ -229,20 +229,6 @@ let player;
 
 const playerContainer = $('.player')
 
-let eventsInit = () => {
-  $(".player__start").click(e => {
-    e.preventDefault();
-  
-    if (playerContainer.hasClass("paused")) {
-      playerContainer.removeClass("paused");
-      player.pauseVideo();
-    } else {
-      playerContainer.addClass("paused");
-      player.playVideo();
-    }
-  })
-}
-
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
     height: '405',
@@ -263,7 +249,44 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+
+let eventsInit = () => {
+  $(".player__start").click(e => {
+    e.preventDefault()
+  
+    if (playerContainer.hasClass("paused")) {
+      playerContainer.removeClass("paused");
+      player.pauseVideo();
+    } else {
+      playerContainer.addClass("paused");
+      player.playVideo();
+    }
+  })
+}
+
+$(".player__playback").click(e => {
+  const bar = $(e.currentTarget);
+  const clickedPosition = e.originalEvent.layerX;
+  
+  const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+  const newPlaybackPositionSec =
+    (player.getDuration() / 100) * newButtonPositionPercent;
+  
+  $(".player__playback-range").css({
+    left: `${newButtonPositionPercent}%`
+  });
+  
+  player.seekTo(newPlaybackPositionSec);
+ });
+
+
 eventsInit();
+
+
+
+
+
+
 
 // TEAM
 
@@ -273,7 +296,7 @@ const openItem = item => {
   const textBlock = container.find(".team__member-block")
   const reqHeight = textBlock.height()
 
-  container.addClass("active")
+  container.addClass("team__avatar--active")
   contentBlock.height(reqHeight)
 }
 
@@ -281,7 +304,7 @@ const closeEveryItem = container => {
   const items = container.find(".team__member-status")
   const itemsContainer = container.find(".team__avatar")
   
-  itemsContainer.removeClass("active")
+  itemsContainer.removeClass("team__avatar--active")
   items.height(0)
 }
 
@@ -291,7 +314,7 @@ $('.team__member').click(e => {
   const elemContainer = $this.closest(".team__avatar")
 
 
-  if (elemContainer.hasClass("active")) {
+  if (elemContainer.hasClass("team__avatar--active")) {
     closeEveryItem(container2)
   } else {
     closeEveryItem(container2)
@@ -342,22 +365,32 @@ ymaps.ready(init);
 // products-menu-section 
 
 const mesureWidth = item => {
+
+  let reqItemWidth = 0
   const screenWidth = $(window).width()
   const container = item.closest('.products-menu')
   const titlesBlocks = container.find('.products-menu__title')
   const titlesWidth = titlesBlocks.width() * titlesBlocks.length
 
-  console.log(titlesWidth);
+  const textContainer = item.find('.products-menu__container')
+  const paddingLeft = parseInt(textContainer.css('padding-left'))
+  const paddingRight = parseInt(textContainer.css('padding-right'))
 
-  const isMobile = window.matchMedia('(max-width: 768px)').matches
+  const isMobile = window.matchMedia("(max-width: 768px)").matches
 
   if (isMobile) {
-    return screenWidth - titlesBlocks
+    reqItemWidth = screenWidth - titlesWidth
   } else {
-    return 500
+    reqItemWidth = 500
   }
-  
+
+  return {
+    container: reqItemWidth,
+    textContainer: reqItemWidth - paddingRight - paddingLeft
+  }
 }
+
+
 
 const closeEveryItemContainer = container => {
   const items = container.find('.products-menu__item');
@@ -370,11 +403,13 @@ const closeEveryItemContainer = container => {
 const openItemCont = item => {
   const hiddenContent = item.find('.products-menu__content')
   const reqWidth = mesureWidth(item)
+  const textBlock = item.find('.products-menu__container')
 
 
   item.addClass('active')
 
-  hiddenContent.width(reqWidth)
+  hiddenContent.width(reqWidth.container)
+  textBlock.width(reqWidth.textContainer)
 
 }
 

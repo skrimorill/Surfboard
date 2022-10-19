@@ -78,6 +78,7 @@ img {
   height: 100%;
   transform: translateY(0%);
   will-change: transform;
+  transition: .3s;
 }
 
 .wrapper {
