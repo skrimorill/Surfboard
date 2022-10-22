@@ -843,7 +843,7 @@ template {
   display: flex;
 }
 
-.reviews__item.reviews__switcher-item--active {
+.reviews__item.reviews__item--active {
   position: static;
   opacity: 1;
   pointer-events: unset;
@@ -1104,17 +1104,15 @@ template {
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1;
   color: #292929;
-  margin: 0 auto;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   background-color: #fff;
+  padding: rem(23px) 0;
 }
 @media (max-width: 480px) {
   .footer {
@@ -1123,6 +1121,13 @@ template {
 }
 .footer__phone-number-text {
   font-weight: 400;
+}
+
+.footer__coll-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 30px;
 }
 
 .social {
@@ -1479,16 +1484,16 @@ template {
 }
 
 .modal {
-  display: none;
-}
-.modal.error-modal.modal__content {
-  color: red;
-}
-.modal.fancybox-content {
-  padding: 0 !important;
-}
-.modal.fancybox-buttons {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #313131;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal__container {
@@ -1497,11 +1502,16 @@ template {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 }
 
 .modal__content {
   margin-bottom: 15px;
   color: #000;
+}
+
+.modal--opened {
+  left: 0;
 }
 
 .player__elem {
@@ -1550,7 +1560,9 @@ template {
 }
 
 .player__playback {
-  flex: auto;
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .products-menu-section {

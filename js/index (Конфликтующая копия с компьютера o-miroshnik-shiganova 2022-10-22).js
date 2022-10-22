@@ -26,12 +26,10 @@ const fullscreenMenu = new Modal({id: "#full-menu", active: "fullscreen-menu--op
 
 const successShow = new Modal({id:"#modal", active: "modal--opened"})
 
+
 const retsuccessShow = function() {
   return successShow
 }
-
-const INITIAL_NUMBER_SLIDE = 1
-
 
 
 // SLIDER JQUERY 
@@ -219,9 +217,7 @@ const playerContainer = $('.player')
 const playbackRange = document.querySelector('.player__playback-range')
 playbackRange.value = 0
 let intervalId
-
-const NORMAL_UPDATE_RANGE = 1000/66
-
+// console.log(playbackRange.value);
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
@@ -255,11 +251,15 @@ function onPlayerReady () {
 }
 
 function onPlayerStateChange() {
-  playbackRange.value = player.getCurrentTime();
-  console.log("refresh range");
+  if(e.data === YT.PlayerState.PLAYING) {
+    player.playVideo();
+  }
+
+  if (e.data === YT.PlayerState.PAUSED) {
+    player.playVideo();
+  } 
+  playbackRange.value = getCurrentTime();
 }
-
-
 
 let eventsInit = () => {
   $(".player__start").click(e => {
@@ -267,25 +267,12 @@ let eventsInit = () => {
   
     if (playerContainer.hasClass("paused")) {
       playerContainer.removeClass("paused");
-
       player.pauseVideo();
-      stopInterval()
     } else {
       playerContainer.addClass("paused");
-      intervalId = setInterval(onPlayerStateChange, NORMAL_UPDATE_RANGE)
       player.playVideo();
     }
   })
-
-  
-
-  function stopInterval() {
-    clearInterval(intervalId)
-    // if (player.pauseVideo) {
-    //   console.log('PAUSED');
-    // }
-  }
-
 }
 
 
