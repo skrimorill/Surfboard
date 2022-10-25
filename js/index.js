@@ -2,13 +2,7 @@ class Modal {
   constructor(selectors) {
     this.selectors = selectors
     this.modalShow = document.querySelector(selectors.id)
-    document.addEventListener("click", e => {
-      const targetButtonEvent = e.target.closest('[data-event]')
-      if(targetButtonEvent) {
-        const event = targetButtonEvent.dataset.event
-        this[event]()
-      }
-    })
+
   }
 
   open() {
@@ -19,19 +13,115 @@ class Modal {
     this.modalShow.classList.remove(this.selectors.active)
 
   }
+
+  setEventListener() {
+    document.addEventListener("click", e => {
+      const targetButtonEvent = e.target.closest('[data-event]')
+      if(targetButtonEvent) {
+        const event = targetButtonEvent.dataset.event
+        this[event]()
+      }
+    })
+  }
 }
 
 
 const fullscreenMenu = new Modal({id: "#full-menu", active: "fullscreen-menu--opened"})
-
+fullscreenMenu.setEventListener()
 const successShow = new Modal({id:"#modal", active: "modal--opened"})
+const moadalAppClose = document.querySelector('.app-close-modal')
+.addEventListener('click', () => {
+  successShow.close()
+})
 
-const retsuccessShow = function() {
-  return successShow
-}
 
-const INITIAL_NUMBER_SLIDE = 1
+// MODAL attempt 2
 
+// class Modal {
+//   constructor(selector, modClass) {
+//     this.menu = document.querySelector(selector)
+//     this._modClass = modClass
+//   }
+
+//   open() {
+//     this.menu.classList.add(this._modClass)
+//   }
+
+//   close() {
+//     this.menu.classList.remove(this._modClass)
+//   }
+
+//   setEventListener() {
+    
+//     this.menu.addEventListener('click', (e) => {
+//       // e.preventDefault()
+
+//       const targetButtonEvent = e.target.closest('[data-event]')
+//       if (targetButtonEvent) {
+//         const event = targetButtonEvent.dataset.event
+//         this[event]()
+//       }
+//     }) 
+//   }
+// }
+
+// const menu = new Modal('#full-menu', 'fullscreen-menu--opened')
+// menu.setEventListener()
+// console.log(menu);
+
+
+// MODAL attempt 3
+
+// class Modal {
+//   constructor(selector, classMod){
+//       this.popup = document.querySelector(selector);
+//       this._classMod = classMod;
+//   }
+
+//   // слушатель закрытия попапа по кнопке esc
+//   _handleEscUp = (evt) => {
+//       if(evt.key ==='Escape'){
+//           this.close()
+//       }
+//   }
+
+//   open() {
+//       this.popup.classList.add(this._classMod)
+//       document.addEventListener('keyup', this._handleEscUp)
+//   }
+
+//   close(){ 
+//       this.popup.classList.remove(this._classMod)
+//       document.removeEventListener('keyup', this._handleEscUp)
+//   }
+
+//   setEventListener() {
+//       //вешаем обрабочтик закрытия попапа по крестику, по оверлею, и если на элементе есть атрибут data-close="true"
+//       this.popup.addEventListener('click', (evt) => {
+//           if(evt.target.classList.contains('modal') ||  !!evt.target.closest('.button-full-close') || evt.target.dataset.close === 'true') {
+//               this.close()
+//           }
+//       })
+
+//       //вешаем обрабочтик открытия попапа если на элементе есть атрибут data-open="id открываемого попапа"
+//       document.addEventListener('click', (e) => {
+//           const targetButtonEvent = e.target.closest('[data-open]'); //если кликнули по кнопке открытия у которой есть атриюут data-open записываем в переменную эту кнопку
+//           if(targetButtonEvent) {
+//               const currentIdPopup = targetButtonEvent.dataset.open; //забираем значение id из атрибута кнопки по которой нажали
+//               if(this.popup.id === currentIdPopup){ // проверям соотвествует ли id текущего попапа значению атрибут data-open
+//                   this.open();
+//               }
+//           }
+//       })
+//   }
+
+// }
+
+// const menu = new Modal('#full-menu', 'fullscreen-menu--opened')
+// menu.setEventListener()
+
+// const successShow = new Modal("#modal", "modal--opened")
+// successShow.setEventListener()
 
 
 // SLIDER JQUERY 
@@ -205,11 +295,88 @@ new AjaxForm('#form', {
   },
   success:(body) => { 
     console.log(body.message) 
-    retsuccessShow()
+    successShow.open()
   }
     
 })
 
+
+// PLAYER
+
+// let player;
+
+// const playerContainer = $('.player')
+// const playbackRange = document.querySelector('.player__playback-range')
+// playbackRange.value = 0
+// let intervalId
+
+// const NORMAL_UPDATE_RANGE = 1000/66
+
+
+// function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('yt-player', {
+//     height: '405',
+//     width: '660',
+//     videoId: 'hk7bPQJmC9w',
+//     events: {
+//       'onReady': onPlayerReady,
+//       'onStateChange': onPlayerStateChange
+//     },
+//     playerVars: {
+//       controls: 0,
+//       disablekb: 1,
+//       showinfo: 0,
+//       rel: 0,
+//       autoplay: 0,
+//       modestbranding: 0
+//     }
+//   });
+// }
+
+// function onPlayerReady () {
+//   playbackRange.mix = 0
+//   playbackRange.max = player.getDuration();
+
+//   playbackRange.addEventListener('click', e => {
+//     player.seekTo(e.target.value)
+//   })
+
+//   eventsInit();
+// }
+
+// function onPlayerStateChange() {
+//   playbackRange.value = player.getCurrentTime();
+//   console.log("refresh range");
+// }
+
+
+
+// let eventsInit = () => {
+//   $(".player__start").click(e => {
+//     e.preventDefault()
+  
+//     if (playerContainer.hasClass("paused")) {
+//       playerContainer.removeClass("paused");
+
+//       player.pauseVideo();
+//       stopInterval()
+//     } else {
+//       playerContainer.addClass("paused");
+//       intervalId = setInterval(onPlayerStateChange, NORMAL_UPDATE_RANGE)
+//       player.playVideo();
+//     }
+//   })
+
+  
+
+//   function stopInterval() {
+//     clearInterval(intervalId)
+//     // if (player.pauseVideo) {
+//     //   console.log('PAUSED');
+//     // }
+//   }
+
+// }
 
 // PLAYER
 
@@ -246,55 +413,58 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady () {
   playbackRange.mix = 0
   playbackRange.max = player.getDuration();
-
-  playbackRange.addEventListener('click', e => {
-    player.seekTo(e.target.value)
+  playbackRange.addEventListener('mousedown', e => {
+    stopInterval();
+    player.pauseVideo();
+  })
+  playbackRange.addEventListener('mouseup', e => {
+    player.seekTo(e.target.value);
+    player.playVideo();
+    intervalId = setInterval(upDateDuration, NORMAL_UPDATE_RANGE)
   })
 
   eventsInit();
 }
 
-function onPlayerStateChange() {
-  playbackRange.value = player.getCurrentTime();
+function onPlayerStateChange(e) {
+  console.log(e);
+  const state = e.data;
+  console.log(state);
   console.log("refresh range");
 }
 
+function upDateDuration(){
+  playbackRange.value = player.getCurrentTime();
+  console.log('UPDATE');
+}
+
+function stopInterval() {
+  clearInterval(intervalId);
+  console.log('STOP');
+}
 
 
 let eventsInit = () => {
   $(".player__start").click(e => {
-    e.preventDefault()
-  
-    if (playerContainer.hasClass("paused")) {
-      playerContainer.removeClass("paused");
-
-      player.pauseVideo();
-      stopInterval()
-    } else {
-      playerContainer.addClass("paused");
-      intervalId = setInterval(onPlayerStateChange, NORMAL_UPDATE_RANGE)
-      player.playVideo();
+    const state = player.getPlayerState();
+    switch (state) {
+      case 1:
+        player.pauseVideo();
+        break;
+      case 2:
+        player.playVideo();
+        break;
+      case 5:
+        player.playVideo();
+        break;
+      case 0:
+        player.playVideo();
+        break;
+      default:
+        break;
     }
   })
-
-  
-
-  function stopInterval() {
-    clearInterval(intervalId)
-    // if (player.pauseVideo) {
-    //   console.log('PAUSED');
-    // }
-  }
-
 }
-
-
-
-
-
-
-
-
 
 
 // TEAM

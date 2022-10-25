@@ -1,7 +1,7 @@
 .footer {
   z-index: 1;
   color: #292929;
-  // margin: 0 auto;
+  margin: 0 auto;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -9,10 +9,6 @@
   right: 0;
   background-color: #fff;
   padding: rem(23px) 0;
-
-  @include phones {
-    flex-direction: column;
-  }  
 
   &__phone-number-text {
   font-weight: 400;
@@ -25,6 +21,10 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px 30px;
+  
+  @include phones {
+    flex-direction: column;
+  }  
 }
 
 
